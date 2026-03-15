@@ -8,13 +8,14 @@ on:
 jobs:
   run-check:
     runs-on: ubuntu-latest
-    # Node.js 24を強制的に使用する設定を追加（2026年仕様）
+    
+    # 警告を消し、Node.js 24環境で動かすための設定
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # v4で問題ありませんがNode24で動かします
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
